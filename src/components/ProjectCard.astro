@@ -12,7 +12,7 @@ const {
 	imagePath,
 	altText
 } = Astro.props
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
+const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif,avif}')
 if (!images[imagePath])
 	throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`)
 ---
@@ -21,7 +21,8 @@ if (!images[imagePath])
 	class={cn(
 		className,
 		'flex flex-col gap-y-3 rounded-2xl border border-border bg-primary-foreground ',
-		href && 'transition-all hover:border-foreground/25 hover:shadow-sm'
+		href &&
+			'transition-all hover:border-foreground/25 hover:shadow-sm hover:scale-105 hover:rotate-2'
 	)}
 	href={href}
 >
