@@ -1,6 +1,7 @@
 ---
 import Card from './Card.astro'
 import Section from './Section.astro'
+import awsCertificationBadge from 'src/assets/aws-dev-assoc.avif'
 ---
 
 <Section title='Certifications'>
@@ -10,7 +11,7 @@ import Section from './Section.astro'
 		special
 		subheading='AWS Certified Developer - Associate showcases skills and knowledge in developing, optimizing, packaging, and deploying applications, using CI/CD workflows, and identifying and resolving application issues.'
 		date='Mar 2029 - Mar 2032'
-		imagePath='/src/assets/aws-dev-assoc.avif'
+		imagePath={awsCertificationBadge}
 		altText='Lorem, ipsum dolor sit'
 		imageClass='h-11 w-auto md:-left-16'
 		href='https://www.google.com'
