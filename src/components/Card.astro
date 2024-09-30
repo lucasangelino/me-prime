@@ -12,13 +12,18 @@ const {
 	date,
 	imagePath,
 	altText,
-	imageClass
+	imageClass,
+	special
 } = Astro.props
-const images = import.meta.glob<{ default: ImageMetadata }>('/src/assets/*.{jpeg,jpg,png,gif}')
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	'/src/assets/*.{jpeg,jpg,png,gif,avif,webp}'
+)
 
 if (imagePath) {
 	if (!images[imagePath])
-		throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`)
+		throw new Error(
+			`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif,avif,webp}"`
+		)
 }
 ---
 
@@ -26,16 +31,38 @@ if (imagePath) {
 	class={cn(
 		className,
 		'relative rounded-2xl border border-border bg-primary-foreground px-5 py-3',
-		href && 'transition-all hover:border-foreground/25 hover:shadow-sm'
+		href && 'transition-all hover:border-foreground/25 hover:shadow-sm',
+		special && 'relative overflow-hidden rounded-xl p-[1px] backdrop-blur-3xl'
 	)}
 	href={href}
 >
-	<div class='flex flex-col gap-y-1.5'>
-		<div class='flex flex-col gap-y-0.5'>
-			<h1 class='text-lg font-medium'>{heading}</h1>
-			<h2 class='text-muted-foreground'>{subheading}</h2>
-			<h2 class='text-muted-foreground'>{date}</h2>
-		</div>
-		<slot />
-	</div>
+	{
+		special ? (
+			<>
+				<span class='absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]' />
+				<div class='inline-flex h-full w-full flex-col  items-center justify-center gap-y-1.5 rounded-xl bg-gray-950  px-4 py-3 text-sm font-medium text-gray-50 backdrop-blur-3xl'>
+					<h1 class='text-lg font-medium'>{heading}</h1>
+					<h2 class='text-muted-foreground'>{subheading}</h2>
+					<div>
+						<Image
+							src={imagePath}
+							alt={altText}
+							height={100}
+							width={100}
+							class={cn('rounded-xl', imageClass, 'mt-5 h-32 w-full object-cover object-center')}
+						/>
+					</div>
+				</div>
+			</>
+		) : (
+			<div class='flex flex-col gap-y-1.5'>
+				<div class='flex flex-col gap-y-0.5'>
+					<h1 class='text-lg font-medium'>{heading}</h1>
+					<h2 class='text-muted-foreground'>{subheading}</h2>
+					<h2 class='text-muted-foreground'>{date}</h2>
+				</div>
+				<slot />
+			</div>
+		)
+	}
 </Tag>

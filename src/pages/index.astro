@@ -12,8 +12,8 @@ import astro from '../assets/about-astro.png'
 
 import { getAllPosts, sortMDByDate } from '@/utils'
 
-const frontend = ['JavaScript', 'Astro', 'Ract', 'Nexjs', 'React Native']
-const backend = ['Node', 'Python']
+const frontend = ['TypeScript', 'Astro', 'Ract', 'Nexjs', 'React Native']
+const backend = ['C', 'Node', 'Python']
 const dbs = ['SQLite', 'Postgress', 'Redis', 'Mongo']
 const infra = ['AWS', 'Jenkins', 'Actions']
 
@@ -231,10 +231,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 		<Section title='Certifications'>
 			<Card
 				as='a'
-				heading='AWS'
-				subheading='Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam dicta.'
+				heading='AWS Developer Associate'
+				special
+				subheading='AWS Certified Developer - Associate showcases skills and knowledge in developing, optimizing, packaging, and deploying applications, using CI/CD workflows, and identifying and resolving application issues.'
 				date='Mar 2029 - Mar 2032'
-				imagePath='/src/assets/about-astro.png'
+				imagePath='/src/assets/aws-dev-assoc.avif'
 				altText='Lorem, ipsum dolor sit'
 				imageClass='h-11 w-auto md:-left-16'
 				href='https://www.google.com'
