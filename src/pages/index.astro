@@ -26,9 +26,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 	<div class='flex w-full flex-col gap-y-10'>
 		<section class='flex flex-col items-center gap-y-7'>
 			<Image
-				src={astro}
+				src={'/src/assets/luc.avif'}
 				alt='profile photo'
-				class='h-28 w-auto rounded-full bg-[#FFBE98] p-2'
+				height={112}
+				width={112}
+				class='border-accent-500 h-44 w-44 rounded-full border-4 bg-gray-950 object-cover p-2'
 				loading='eager'
 			/>
 
@@ -66,7 +68,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 						>
 					</Label>
 					<Label
-						title='Connect on Linkedin'
+						title='Conectame en LinkedIn'
 						as='a'
 						href='https://www.linkedin.com/in/lucas-nicolas-angelino/'
 						target='_blank'
