@@ -1,0 +1,28 @@
+---
+import Card from './Card.astro'
+import Section from './Section.astro'
+---
+
+<Section title='Certifications'>
+	<Card
+		as='a'
+		heading='AWS Developer Associate'
+		special
+		subheading='AWS Certified Developer - Associate showcases skills and knowledge in developing, optimizing, packaging, and deploying applications, using CI/CD workflows, and identifying and resolving application issues.'
+		date='Mar 2029 - Mar 2032'
+		imagePath='/src/assets/aws-dev-assoc.avif'
+		altText='Lorem, ipsum dolor sit'
+		imageClass='h-11 w-auto md:-left-16'
+		href='https://www.google.com'
+	/>
+	<Card
+		as='a'
+		heading='Deutsches Sprachdiplom (DSD) II'
+		subheading='The Deutsches Sprachdiplom (DSD) is an official German language certificate issued by the German education authorities and the Foreign Office (Germany) to certify levels of knowledge of the German language in schools worldwide.'
+		date='German Embassy'
+		imagePath='/src/assets/about-astro.png'
+		altText='Lorem, ipsum dolor sit'
+		imageClass='h-11 w-auto md:-left-16'
+		href='https://www.google.com'
+	/>
+</Section>

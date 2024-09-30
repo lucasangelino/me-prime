@@ -1,0 +1,16 @@
+---
+import Section from './Section.astro'
+import SkillLayout from './SkillLayout.astro'
+
+const frontend = ['TypeScript', 'Astro', 'Ract', 'Nexjs', 'React Native']
+const backend = ['C', 'Node', 'Python']
+const dbs = ['SQLite', 'Postgress', 'Redis', 'Mongo']
+const infra = ['AWS', 'Jenkins', 'Actions']
+---
+
+<Section title='Skills'>
+	<SkillLayout title='Frontend' skills={frontend} />
+	<SkillLayout title='Backend' skills={backend} />
+	<SkillLayout title='Data Base' skills={dbs} />
+	<SkillLayout title='Infra' skills={infra} />
+</Section>
