@@ -1,0 +1,75 @@
+---
+import Card from './Card.astro'
+import Section from './Section.astro'
+---
+
+<Section title='Experience'>
+	<Card
+		heading='Software Engineer'
+		subheading='JP Morgan Chase & Co.'
+		date='Jun. 2020 - Current'
+		imagePath='/src/assets/about-astro.png'
+		altText='Lorem, ipsum dolor sit'
+		imageClass='h-12 w-auto md:-left-16'
+	>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				Leading the Front-End development of an internal telemetry tool that enables the downtimes
+				detection in various company services.
+
+				<li>
+					I participated in the development and support of the company's internal authentication
+					service using standards such as OAuth 2.0. Additionally, I carried out the transcription
+					of the authentication SDK to Python.
+				</li>
+			</li>
+		</ul>
+	</Card>
+	<Card
+		heading='FullStack Developer'
+		subheading='Telefonica'
+		date='Abr. 2019 - Jun. 2020'
+		imagePath='/src/assets/about-astro.png'
+		altText='Lorem, ipsum dolor sit'
+		imageClass='h-12 w-auto md:-left-16'
+	>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				I Played a key role in the development of a Customer Relationship Management (CRM) system,
+				leading to a remarkable 25% reduction in operational costs for one of the most popular
+				Telecomunication company.
+			</li>
+		</ul>
+	</Card>
+	<Card
+		heading='Software Developer'
+		subheading='Accenture'
+		date='Feb. 2015 - Mar. 2019'
+		imagePath='/src/assets/about-astro.png'
+		altText='Lorem, ipsum dolor sit'
+		imageClass='h-12 w-auto md:-left-16'
+	>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				Part of a team in charge of designing, creating and implementing software for one of the
+				major Oil & Gas company in the world.
+			</li>
+		</ul>
+	</Card>
+	<Card
+		heading='MIS analyst'
+		subheading='Accenture'
+		date='Sept. 2013 - Feb. 2015'
+		imagePath='/src/assets/about-astro.png'
+		altText='Lorem, ipsum dolor sit'
+		imageClass='h-12 w-auto md:-left-16'
+	>
+		<ul class='ml-4 list-disc text-muted-foreground'>
+			<li>
+				I was responsible for maintaining various information systems. I participated in the
+				migration of SAP modules. I provided support to different departments that used the
+				company's accounting and reporting systems.
+			</li>
+		</ul>
+	</Card>
+</Section>
